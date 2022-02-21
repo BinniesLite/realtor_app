@@ -4,11 +4,11 @@ import {Flex, Box, Text, Button} from  "@chakra-ui/react";
 import {baseUrl, fetchApi} from "../util/fetchApi";
 import Property from "../components/Property";
 
-
+const src = "https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4"
 
 const Banner = ({ purpose, title1, title2, desc1, desc2, linkName, buttonText, imageUrl }) => (
   <Flex flexWrap="wrap" justifyContent="center" alignItems="center" m="10">
-    <Image src={imageUrl} alt="" width={500} height={300}/>
+    <Image loader={() => src} src={imageUrl} alt="" width={500} height={300}/>
     <Box p="5" >
       <Text color="gray.500"  fontSize="sm" fontWeight="medium">{purpose}</Text>
       <Text fontSize="3xl" fontWeight="bold">{title1} <br/>  {title2} </Text>
@@ -21,9 +21,8 @@ const Banner = ({ purpose, title1, title2, desc1, desc2, linkName, buttonText, i
 )
 
 export default function Home({propertiesForRent, propertiesForSale}) {
-  console.log(propertiesForRent);
   return (
-    <Box zIndex="0">
+    <Box>
       <Banner 
         purpose='RENT A HOME'
         title1="Rental Homes for"

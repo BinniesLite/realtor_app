@@ -8,13 +8,11 @@ import Layout from "../components/Layout";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-
-
-      <Layout>
-        <ChakraProvider>
-          <Component {...pageProps}/>
-        </ChakraProvider>
-      </Layout>
+      <ChakraProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ChakraProvider>
     </>
   );
 }

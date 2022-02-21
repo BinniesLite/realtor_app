@@ -17,23 +17,23 @@ import { FiKey } from "react-icons/fi";
 
 const NavBar = () => {
   return (
-    <Flex zIndex="1" marginTop="30" p="2" borderBottom="1px" borderColor="gray.100" mx="auto">
-      <Box fontSize="6x1" color="blue.400" fontWeight="bold">
-        <Text fontSize="3x1" color="blue.400" fontWeight="bold">
+    <Flex marginTop="30" p="2" mx="20" borderBottomColor="black" borderBottom="10" borderColor="black">
+      <Box fontSize="3xl" color="blue.400" fontWeight="bold">
+        <Text fontSize="6x1" color="blue.400" fontWeight="bold">
             Realtor
         </Text>
       </Box>
 
       <Spacer></Spacer>
       <Box>
-        <Menu>
+        <Menu bgColor="white">
           <MenuButton
             as={IconButton}
             icon={<FcMenu />}
             variant="outlined"
             color="red.400"
           ></MenuButton>
-          <MenuList>
+          <MenuList bgColor="white" borderRadius="xl"    >
             <Link href="/" passHref>
               <MenuItem icon={<FcHome />}>Home</MenuItem>
             </Link>
@@ -55,5 +55,8 @@ const NavBar = () => {
     </Flex>
   );
 };
+
+
+
 
 export default NavBar;
