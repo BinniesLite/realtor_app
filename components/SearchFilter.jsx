@@ -7,13 +7,15 @@ import { filterData, getFilterValues } from '../util/filterData';
 const SearchFilter = () => {
   const [filter, setFilters] = useState(filterData);
   const router = useRouter();
-  console.log(router);
+
   const searchProperties = (filterValues) => {
     console.log(filterValues);
     const path = router.pathname;
     const { query } = router;
     const values = getFilterValues(filterValues);
+    
     values.forEach((item) => {
+      if (item.value && filterValues?.[item.name])
       query[item.name] = item.value
     })
     router.push({pathname: path, query: query})
